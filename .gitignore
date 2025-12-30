@@ -1,0 +1,74 @@
+### =========================
+### Java / Maven
+### =========================
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Maven wrapper
+.mvn/wrapper/maven-wrapper.properties
+
+### =========================
+### Spring Boot
+### =========================
+# Spring Boot logs
+logs/
+*.log
+
+# Application secrets（必要に応じて）
+application-*.yml
+!application-example.yml
+
+### =========================
+### IDE（IntelliJ IDEA）
+### =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+### =========================
+### Eclipse / STS
+### =========================
+.project
+.classpath
+.settings/
+.factorypath
+
+### =========================
+### VS Code
+### =========================
+.vscode/
+
+### =========================
+### OS
+### =========================
+.DS_Store
+Thumbs.db
+
+### =========================
+### Lombok
+### =========================
+# Lombok config (基本はコミットしない)
+.lombok
+
+### =========================
+### Test / Coverage
+### =========================
+/build/
+*.exec
+*.lcov
+
+### =========================
+### Database
+### =========================
+# H2 local database files
+*.mv.db
+*.trace.db
+
+### =========================
+### 기타
+### =========================
+# Temporary files
+*.tmp
+*.swp
