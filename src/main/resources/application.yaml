@@ -1,3 +1,9 @@
 spring:
   application:
     name: gratitude-share-app
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.example.gratitude_share_app.domain.model
+  configuration:
+    map-underscore-to-camel-case: true

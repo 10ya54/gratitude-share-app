@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout/layout}">
+<head>
+</head>
+<body>
+<nav layout:fragment="header" class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ありがとう共有アプリケーション</a>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+      <form method="post" th:action="@{/logout}">
+        <button class="btn btn-link pull-right navbar-brand" type="submit">
+          ログアウト
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
