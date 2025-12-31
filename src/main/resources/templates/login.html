@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>ログイン</title>
+</head>
+<body class="bg-light">
+<div layout:fragment="content" class="container text-center">
+    <div class="card mx-auto mt-5" style="width: 24rem;">
+        <form method="post" th:action="@{/login}" class="form-login" th:object="${loginForm}">
+            <h2 class="card-header">ログイン</h2>
+            <div class="card-body p-4">
+                <div>
+                    <p th:if="${param.error}" class="text-danger">
+                        ユーザーIDまたはパスワードが正しくありません
+                    </p>
+                    <div class="form-group">
+                        <label for="userId" class="sr-only text-start w-100">ユーザID</label>
+                        <input type="text" th:field="*{userId}" class="form-control" th:errorclass="is-invalid" placeholder="例：u001" />
+                        <div th:errors="*{userId}" class="invalid-feedback text-start"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="password" class="text-start w-100">パスワード</label>
+                        <input type="password" th:field="*{password}" class="form-control" th:errorclass="is-invalid" placeholder="例：password" />
+                        <div th:errors="*{password}" class="invalid-feedback text-start"></div>
+                    </div>
+                    <input type="submit" class="btn btn-primary mt-4 mb-2" value="ログイン" />
+                </div>
+                <a th:href="@{/user/signup}">新規登録はこちら</a>
+            </div>
+        </form>
+    </div>
+    <!-- 仮ユーザIDとパスワードのテーブル -->
+    <table class="table table-bordered table-striped mt-4 w-25 mx-auto">
+        <thead>
+        <tr>
+            <th>ユーザID</th>
+            <th>パスワード</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>u001</td>
+            <td>password</td>
+        </tr>
+        <tr>
+            <td>u002</td>
+            <td>password</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
